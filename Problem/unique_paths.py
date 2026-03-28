@@ -6,15 +6,19 @@ class Solution:
         #         matrix[i][j] = matrix[i - 1][j] + matrix[i][j - 1]
         # return matrix[m-1][n-1]
 
-        a = max(m, n)
-        b = min(m, n)
-        arr = [1 for _ in range(a)]
-        for i in range(1, b):
-            for j in range(1, a):
-                arr[j] += arr[j - 1]
-
-        return arr[-1]
-
+        # a = max(m, n)
+        # b = min(m, n)
+        # arr = [1 for _ in range(a)]
+        # for i in range(1, b):
+        #     for j in range(1, a):
+        #         arr[j] += arr[j - 1]
+        #
+        # return arr[-1]
+        dp = [[1] * n for _ in range(m)]
+        for i in range(1, m):
+            for j in range(1, n):
+                dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
+        return dp[m - 1][n - 1]
 
 
 
