@@ -24,7 +24,7 @@ class Solution:
             return visited
 
         pacific_starts = [(r, 0) for r in range(rows)] + [(0, c) for c in range(cols)]
-        atlantic_starts = [(r, rows - 1) for r in range(rows)] + [(rows - 1, c) for c in range(cols)]
+        atlantic_starts = [(r, cols - 1) for r in range(rows)] + [(rows - 1, c) for c in range(cols)]
 
         pacific = bfs(pacific_starts)
         atlantic = bfs(atlantic_starts)
